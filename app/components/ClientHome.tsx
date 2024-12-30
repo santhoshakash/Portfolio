@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  Github,
+  // Github,
   Linkedin,
   Mail,
   ExternalLink,
@@ -311,12 +311,12 @@ export default function Home() {
               </div>
 
               <div className='flex items-center gap-6 justify-center lg:justify-start'>
-                <a
+                {/* <a
                   href='https://github.com/santhoshakash'
                   className='text-gray-600 hover:text-blue-600 transition-colors'
                 >
                   <Github className='w-6 h-6' />
-                </a>
+                </a> */}
                 <a
                   href='https://www.linkedin.com/in/santhosh-akash-6879371bb'
                   className='text-gray-600 hover:text-blue-600 transition-colors'
@@ -693,14 +693,14 @@ export default function Home() {
                     Connect with me on social media
                   </p>
                   <div className='flex gap-4'>
-                    <a
+                    {/* <a
                       href='https://github.com/santhoshakash'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 transition-colors'
                     >
                       <Github className='w-5 h-5' />
-                    </a>
+                    </a> */}
                     <a
                       href='https://www.linkedin.com/in/santhosh-akash-6879371bb'
                       target='_blank'
@@ -776,14 +776,14 @@ export default function Home() {
               <p>&copy; 2024 Santhosh Akash. All rights reserved.</p>
             </div>
             <div className='flex space-x-4'>
-              <a
+              {/* <a
                 href='https://github.com/santhoshakash'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='hover:text-blue-400'
               >
                 <Github className='h-6 w-6' />
-              </a>
+              </a> */}
               <a
                 href='https://www.linkedin.com/in/santhosh-akash-6879371bb'
                 target='_blank'
