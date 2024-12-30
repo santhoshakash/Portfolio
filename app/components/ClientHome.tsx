@@ -194,7 +194,7 @@ export default function Home() {
       'Next.js',
       'Tailwind CSS',
     ],
-    Backend: ['Node.js', 'Express.js', 'PostgreSQL'],
+    Backend: ['Node.js', 'Express.js', 'GraphQL'],
     Database: ['Firebase', 'MongoDB', 'PostgreSQL'],
     DevOps: [
       'AWS',
