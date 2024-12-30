@@ -101,7 +101,7 @@ export default function Home() {
       period: '2021 - Present',
       description:
         'Develop and maintain enterprise-grade applications using React and Node.js, focusing on scalability, performance, and user experience. Collaborate with cross-functional teams to design and implement innovative solutions that meet business objectives.',
-      skills: ['React', 'Node.js', 'AWS', 'MongoDB'],
+      skills: ['React', 'Node.js', 'Express.js', 'Next.js', 'AWS'],
       highlights: [
         'Implemented CI/CD pipeline reducing deployment time by 60%',
         'Architected microservices infrastructure serving 1M+ users',
@@ -114,7 +114,7 @@ export default function Home() {
       company: 'Embassy of Things (eot.ai)',
       period: '2023 - 2024',
       description: `As part of the Software Development Specialist team, works on research, development and implementation of Software Development projects for EOT's Industrial Data Fabric enables industrial enterprises to modernize and build their own operational cloud historian, industrial digital twin, or industrial data lake.`,
-      skills: ['Vue.js', 'Python', 'PostgreSQL', 'Docker'],
+      skills: ['Node.js', 'AWS'],
       highlights: [
         'Built responsive web applications for 10+ enterprise clients',
         'Reduced loading time by 50% through optimization',
@@ -194,9 +194,19 @@ export default function Home() {
       'Next.js',
       'Tailwind CSS',
     ],
-    Backend: ['Node.js', 'Express.js', 'GraphQL'],
+    Backend: ['Node.js', 'Express.js', 'PostgreSQL'],
     Database: ['Firebase', 'MongoDB', 'PostgreSQL'],
-    DevOps: ['AWS', 'S3', 'Lambda', 'SQS', 'Api Gateway', 'Git'],
+    DevOps: [
+      'AWS',
+      'S3',
+      'Lambda',
+      'SQS',
+      'Api Gateway',
+      'Git',
+      'ECS',
+      'EC2',
+      'EFS',
+    ],
   };
 
   return (
