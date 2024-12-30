@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import {
   Github,
   Linkedin,
@@ -10,13 +9,17 @@ import {
   Menu,
   X,
   ArrowRight,
-  ChevronRight,
   Building2,
   Calendar,
   Send,
   MapPin,
   Phone,
 } from 'lucide-react';
+
+interface IntersectionObserverEntry {
+  isIntersecting: boolean;
+  target: Element;
+}
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,31 +33,35 @@ export default function Home() {
       threshold: 0.1,
     };
 
-    const handleIntersect = (entries, observer) => {
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target
             .querySelectorAll('.hidden-left, .hidden-right, .hidden-scale')
-            .forEach((el) => {
-              el.classList.remove(
-                'hidden-left',
-                'hidden-right',
-                'hidden-scale'
-              );
-              el.classList.add(el.dataset.animation);
+            .forEach((el: Element) => {
+              if (el instanceof HTMLElement) {
+                el.classList.remove(
+                  'hidden-left',
+                  'hidden-right',
+                  'hidden-scale'
+                );
+                el.classList.add(el.dataset.animation || '');
+              }
             });
         } else {
           entry.target
             .querySelectorAll(
               '.animate-slide-in-left, .animate-slide-in-right, .animate-fade-in-scale'
             )
-            .forEach((el) => {
-              el.classList.remove(
-                'animate-slide-in-left',
-                'animate-slide-in-right',
-                'animate-fade-in-scale'
-              );
-              el.classList.add(el.dataset.hidden);
+            .forEach((el: Element) => {
+              if (el instanceof HTMLElement) {
+                el.classList.remove(
+                  'animate-slide-in-left',
+                  'animate-slide-in-right',
+                  'animate-fade-in-scale'
+                );
+                el.classList.add(el.dataset.hidden || '');
+              }
             });
         }
       });
