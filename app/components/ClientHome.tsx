@@ -271,75 +271,96 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id='home'
-        className='min-h-screen flex items-center bg-gradient-to-br from-white to-grey-50'
+        className='relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-white to-gray-50'
       >
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-          <div className='lg:grid lg:grid-cols-2 lg:gap-16 items-center'>
-            <div className='space-y-8 text-center lg:text-left'>
-              <div className='space-y-4'>
-                <div className='inline-block'>
-                  <span className='bg-blue-100 text-blue-600 text-sm font-medium px-4 py-1.5 rounded-full'>
-                    Available for Work
-                  </span>
-                </div>
+        {/* Background decoration */}
+        <div className='absolute inset-0'>
+          <div className='absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob'></div>
+          <div className='absolute top-40 right-20 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000'></div>
+          {/* <div className='absolute -bottom-20 left-1/2 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000'></div> */}
+        </div>
 
-                <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500'>
-                  Santhosh Akash
+        <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+          <div className='lg:grid lg:grid-cols-12 lg:gap-8 items-center'>
+            {/* Content Section */}
+            <div className='col-span-7 space-y-8'>
+              {/* Status Badge */}
+              <div className='inline-flex items-center space-x-2'>
+                <span className='flex h-3 w-3'>
+                  <span className='animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75'></span>
+                  <span className='relative inline-flex rounded-full h-3 w-3 bg-green-500'></span>
+                </span>
+                <span className='bg-white/30 backdrop-blur-md text-gray-700 text-sm font-medium px-4 py-1.5 rounded-full border border-gray-200'>
+                  Available for Work
+                </span>
+              </div>
+
+              {/* Main Content */}
+              <div className='space-y-6'>
+                <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold'>
+                  <span className='block bg-gradient-to-r from-blue-600 via-purple-500 to-cyan-400 bg-clip-text text-transparent'>
+                    Santhosh
+                  </span>
+                  <span className='bg-gradient-to-r from-blue-600 via-purple-500 to-cyan-400 bg-clip-text text-transparent'>
+                    Akash
+                  </span>
                 </h1>
 
-                <p className='text-xl text-gray-600 max-w-2xl'>
-                  Full Stack Developer crafting exceptional digital experiences
-                  with modern technologies and creative solutions
+                <p className='text-xl text-gray-600 max-w-2xl leading-relaxed'>
+                  Full Stack Developer transforming ideas into elegant digital
+                  experiences through modern tech and creative innovation
                 </p>
               </div>
 
-              <div className='flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start'>
+              {/* CTA Buttons */}
+              <div className='flex flex-col sm:flex-row items-center gap-4'>
                 <a
                   href='#contact'
-                  className='group flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all w-full sm:w-auto text-center justify-center'
+                  className='group relative px-8 py-4 w-full sm:w-auto text-center'
                 >
-                  Get in touch
-                  <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
+                  <span className='absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-blue-600 group-hover:-translate-x-0 group-hover:-translate-y-0'></span>
+                  <span className='absolute inset-0 w-full h-full bg-white border-2 border-blue-600 group-hover:bg-blue-600'></span>
+                  <span className='relative text-blue-600 group-hover:text-white font-bold flex items-center justify-center gap-2'>
+                    Get in touch
+                    <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
+                  </span>
                 </a>
 
                 <a
                   href='#projects'
-                  className='px-6 py-3 border-2 border-gray-300 hover:border-blue-400 rounded-lg font-medium text-gray-700 hover:text-blue-600 transition-colors w-full sm:w-auto text-center'
+                  className='px-8 py-4 bg-white/40 backdrop-blur-md border border-gray-200 hover:border-blue-400 rounded-lg font-medium text-gray-700 hover:text-blue-600 transition-colors w-full sm:w-auto text-center shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10'
                 >
                   View projects
                 </a>
               </div>
 
-              <div className='flex items-center gap-6 justify-center lg:justify-start'>
-                {/* <a
-                  href='https://github.com/santhoshakash'
-                  className='text-gray-600 hover:text-blue-600 transition-colors'
-                >
-                  <Github className='w-6 h-6' />
-                </a> */}
+              {/* Social Links */}
+              <div className='flex items-center gap-6'>
                 <a
                   href='https://www.linkedin.com/in/santhosh-akash-6879371bb'
-                  className='text-gray-600 hover:text-blue-600 transition-colors'
+                  className='group p-3 bg-white/50 backdrop-blur-md rounded-full border border-gray-200 hover:border-blue-400 transition-colors shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10'
                 >
-                  <Linkedin className='w-6 h-6' />
+                  <Linkedin className='w-5 h-5 text-gray-600 group-hover:text-blue-600' />
                 </a>
                 <a
                   href='mailto:santhoshakash1145@gmail.com'
-                  className='text-gray-600 hover:text-blue-600 transition-colors'
+                  className='group p-3 bg-white/50 backdrop-blur-md rounded-full border border-gray-200 hover:border-blue-400 transition-colors shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10'
                 >
-                  <Mail className='w-6 h-6' />
+                  <Mail className='w-5 h-5 text-gray-600 group-hover:text-blue-600' />
                 </a>
               </div>
             </div>
 
-            <div className='mt-12 lg:mt-0 flex justify-center lg:justify-end'>
-              <div className='relative w-64 h-64 lg:w-80 lg:h-80'>
-                <div className='absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-2xl transform rotate-3 scale-105 opacity-10 blur-2xl'></div>
-                <div className='relative rounded-2xl overflow-hidden shadow-2xl w-full h-full'>
+            {/* Image Section */}
+            <div className='col-span-5 mt-12 lg:mt-0'>
+              <div className='relative'>
+                <div className='absolute inset-0 bg-gradient-to-tr from-white to-gray-50 rounded-2xl transform rotate-3 scale-105 opacity-10 blur-2xl animate-pulse'></div>
+                <div className='relative rounded-2xl overflow-hidden'>
+                  <div className='absolute inset-0 bg-gradient-to-tr  backdrop-blur-sm'></div>
                   <img
                     src='/753fd1e1-9282-4416-9394-0c69642db5fa.JPEG'
                     alt='Profile'
-                    className='w-full h-full object-cover'
+                    className='w-full mt-12 h-full object-cover rounded-2xl shadow-2xl transform transition-transform hover:scale-105 duration-500'
                   />
                 </div>
               </div>
@@ -701,6 +722,14 @@ export default function Home() {
                     >
                       <Github className='w-5 h-5' />
                     </a> */}
+                    <a
+                      href='mailto:santhoshakash1145@gmail.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 transition-colors'
+                    >
+                      <Mail className='w-6 h-6' />
+                    </a>
                     <a
                       href='https://www.linkedin.com/in/santhosh-akash-6879371bb'
                       target='_blank'
