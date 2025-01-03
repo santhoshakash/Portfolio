@@ -132,13 +132,13 @@ export default function Home() {
       tags: ['React', 'HTML', 'CSS', 'Firebase'],
       link: '#',
       github: '#',
-      featured: true,
+      featured: false,
     },
     {
       title: 'Norwex',
       description:
         'A comprehensive online shopping platform featuring payment integration, commission-based purchasing, and a dedicated admin application for management.',
-      image: '/NORWEX_LOGO_LOCKUP_BLUE_NO_TAG.png',
+      image: '/Norwex_logo.svg',
       tags: ['React.js', 'Tailwind', 'Shopify', 'Firebase', 'Node.js'],
       link: 'https://norwex.eu/',
       github: '#',
@@ -148,7 +148,7 @@ export default function Home() {
       title: 'Tapouts',
       description:
         'A web application designed to create and manage sessions aimed at reducing anxiety in children aged 4 to 16.',
-      image: '/Tapoutslogo.png',
+      image: '/Tapouts_logo.svg',
       tags: ['Next.js', 'Tailwind', 'Firebase'],
       link: 'https://tapouts.com/',
       github: '#',
@@ -495,8 +495,11 @@ export default function Home() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className='w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300'
+                    className='object-cover transform group-hover:scale-105 transition-transform duration-300'
+                    width={592}
+                    height={256}
                   />
+
                   {/* Tags Overlay */}
                   <div className='absolute top-4 left-4 z-20 flex flex-wrap gap-2'>
                     {project.tags.map((tag, tagIndex) => (
