@@ -189,7 +189,6 @@ export default function Home() {
       'JavaScript',
       'TypeScript',
       'React',
-      'Redux',
       'context',
       'Next.js',
       'Tailwind CSS',
