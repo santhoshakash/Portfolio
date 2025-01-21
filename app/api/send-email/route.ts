@@ -3,21 +3,24 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
-    console.log(
-      process.env.EMAIL_USER,
-      'EMAIL_USER',
-      'EMAIL_PASSWORD',
-      process.env.EMAIL_PASSWORD
-    );
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      throw new Error('Email configuration is missing');
+    }
+
     const { fullName, email, message } = await request.json();
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // use SSL
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
       },
     });
+
+    // Verify SMTP connection configuration
+    await transporter.verify();
 
     const mailOptions = {
       from: {
@@ -48,7 +51,7 @@ This email was sent from your portfolio contact form.
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Failed to send email.........:', error);
+    console.error('Failed to send email:', error);
     return NextResponse.json(
       { error: 'Failed to send email' },
       { status: 500 }
