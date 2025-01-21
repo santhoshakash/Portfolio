@@ -51,7 +51,7 @@ This email was sent from your portfolio contact form.
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Failed to send email:', error);
+    console.error('Failed to send email:.....', error);
     return NextResponse.json(
       { error: 'Failed to send email' },
       { status: 500 }
