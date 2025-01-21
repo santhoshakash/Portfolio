@@ -208,6 +208,62 @@ export default function Home() {
     ],
   };
 
+  interface FormData {
+    fullName: string;
+    email: string;
+    message: string;
+  }
+
+  const [formData, setFormData] = useState<FormData>({
+    fullName: '',
+    email: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(
+    null
+  );
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: 'santhoshakash1145@gmail.com',
+          subject: `New Contact Form Submission from ${formData.fullName}`,
+          ...formData,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send email');
+
+      setSubmitStatus('success');
+      setFormData({ fullName: '', email: '', message: '' });
+
+      // Hide the message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Failed to send email:', error);
+
+      // Hide the error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className='min-h-screen bg-gradient-to-br from-white to-gray-50'>
       {/* Navigation */}
@@ -747,50 +803,89 @@ export default function Home() {
 
             {/* Contact Form */}
             <div className='bg-white p-8 rounded-2xl shadow-lg'>
-              <h3 className='text-2xl font-bold text-gray-900 mb-6'>
+              <h3 className='text-2xl font-bold text-black mb-6'>
                 Send a Message
               </h3>
-              <form className='space-y-6'>
+              <form onSubmit={handleSubmit} className='space-y-6'>
                 <div className='space-y-4'>
                   <div>
-                    <label className='block text-sm font-medium text-gray-700 mb-1'>
+                    <label className='block text-sm font-medium text-black mb-1'>
                       Full Name
                     </label>
                     <input
                       type='text'
+                      required
+                      value={formData.fullName}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          fullName: e.target.value,
+                        }))
+                      }
                       placeholder='enter full name...'
-                      className='w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors'
+                      className='w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-black'
                     />
                   </div>
 
                   <div>
-                    <label className='block text-sm font-medium text-gray-700 mb-1'>
+                    <label className='block text-sm font-medium text-black mb-1'>
                       Email Address
                     </label>
                     <input
                       type='email'
+                      required
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
                       placeholder='enter email here...'
-                      className='w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors'
+                      className='w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors text-black'
                     />
                   </div>
 
                   <div>
-                    <label className='block text-sm font-medium text-gray-700 mb-1'>
+                    <label className='block text-sm font-medium text-black mb-1'>
                       Message
                     </label>
                     <textarea
+                      required
                       rows={6}
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          message: e.target.value,
+                        }))
+                      }
                       placeholder='Your message here...'
-                      className='w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors resize-none'
+                      className='w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors resize-none text-black'
                     ></textarea>
                   </div>
                 </div>
 
+                {submitStatus && (
+                  <div
+                    className={`p-3 rounded-lg ${
+                      submitStatus === 'success'
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-red-100 text-red-700'
+                    }`}
+                  >
+                    {submitStatus === 'success'
+                      ? 'Message sent successfully!'
+                      : 'Failed to send message. Please try again.'}
+                  </div>
+                )}
+
                 <button
                   type='submit'
-                  className='w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 transition-colors'
+                  disabled={isSubmitting}
+                  className='w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 transition-colors disabled:opacity-50'
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                   <Send className='w-4 h-4' />
                 </button>
               </form>
