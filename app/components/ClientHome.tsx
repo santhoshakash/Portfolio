@@ -848,6 +848,22 @@ export default function Home() {
                     required
                   ></textarea>
                 </div>
+
+                {/* Status Message */}
+                {submitStatus && (
+                  <div
+                    className={`p-4 rounded-lg ${
+                      submitStatus === 'success'
+                        ? 'bg-green-500/10 text-green-400 border border-green-400/20'
+                        : 'bg-red-500/10 text-red-400 border border-red-400/20'
+                    }`}
+                  >
+                    {submitStatus === 'success'
+                      ? 'Message sent successfully!'
+                      : 'Failed to send message. Please try again.'}
+                  </div>
+                )}
+
                 <button
                   type='submit'
                   disabled={isSubmitting}
