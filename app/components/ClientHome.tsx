@@ -13,10 +13,10 @@ import {
   ArrowRight,
   Building2,
   Calendar,
-  Send,
-  MapPin,
+  // Send,
+  // MapPin,
   Phone,
-  TextSearchIcon,
+  // TextSearchIcon,
   Terminal,
   FileText,
 } from 'lucide-react';
@@ -758,8 +758,8 @@ export default function Home() {
                 Get in Touch
               </h2>
               <p className='mt-4 text-gray-300'>
-                I'm always excited to connect with fellow developers, potential
-                clients, and collaborators
+                I&apos;m always excited to connect with fellow developers,
+                potential clients, and collaborators
               </p>
             </div>
 
