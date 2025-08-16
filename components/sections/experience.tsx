@@ -222,8 +222,8 @@ export function Experience() {
                         <CardContent className="pt-8 pb-8">
                             <h3 className="text-2xl font-bold mb-4">Ready for New Challenges</h3>
                             <p className="text-muted-foreground mb-6">
-                                I'm always excited to take on new projects and contribute to innovative solutions.
-                                Let's discuss how we can work together!
+                                I&apos;m always excited to take on new projects and contribute to innovative solutions.
+                                Let&apos;s discuss how we can work together!
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <a
@@ -239,7 +239,7 @@ export function Experience() {
                                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                                     className="inline-flex items-center justify-center px-6 py-3 border border-border bg-background text-foreground rounded-lg font-semibold hover:bg-muted transition-all duration-300"
                                 >
-                                    <span>Let's Connect</span>
+                                    <span>Let&apos;s Connect</span>
                                 </button>
                             </div>
                         </CardContent>

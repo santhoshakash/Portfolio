@@ -57,7 +57,7 @@ export function Footer() {
                             </div>
                             <p className="text-muted-foreground max-w-md">
                                 Passionate about creating innovative digital solutions that make a difference.
-                                Let's build something amazing together!
+                                Let&apos;s build something amazing together!
                             </p>
                         </motion.div>
                     </div>

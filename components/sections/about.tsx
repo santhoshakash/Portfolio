@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Download, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -123,7 +122,7 @@ export function About() {
                                 className="group"
                                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                             >
-                                <span>Let's Work Together</span>
+                                <span>Let&apos;s Work Together</span>
                                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                             </Button>
                         </motion.div>

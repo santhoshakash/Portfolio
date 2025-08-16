@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Eye, Globe, Code, Zap, Rocket, Shield, Users, ShoppingCart, BookOpen, CheckSquare, Palette, Database } from "lucide-react"
+import { ExternalLink, Github, Eye, Zap, Rocket, Shield, Users, ShoppingCart, BookOpen, CheckSquare } from "lucide-react"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -371,8 +371,8 @@ export function Projects() {
                                 <h3 className="text-2xl font-bold mb-4">Interested in working together?</h3>
                             </div>
                             <p className="text-muted-foreground mb-6">
-                                I'm always excited to take on new projects and contribute to innovative solutions.
-                                Let's discuss how we can bring your ideas to life!
+                                I&apos;m always excited to take on new projects and contribute to innovative solutions.
+                                Let&apos;s discuss how we can bring your ideas to life!
                             </p>
                             <Button
                                 variant="gradient"

@@ -131,8 +131,8 @@ export function Skills() {
                         </CardHeader>
                         <CardContent className="space-y-6">
                             <p className="text-muted-foreground text-lg">
-                                Technology evolves rapidly, and I'm committed to staying at the forefront.
-                                I'm currently exploring and expanding my knowledge in:
+                                Technology evolves rapidly, and I&apos;m committed to staying at the forefront.
+                                I&apos;m currently exploring and expanding my knowledge in:
                             </p>
 
                             <div className="flex flex-wrap justify-center gap-3">
@@ -166,7 +166,7 @@ export function Skills() {
                             <div className="pt-4">
                                 <p className="text-sm text-muted-foreground">
                                     💡 <strong>Pro tip:</strong> The best developers are perpetual students.
-                                    I'm always open to learning new technologies and approaches!
+                                    I&apos;m always open to learning new technologies and approaches!
                                 </p>
                             </div>
                         </CardContent>

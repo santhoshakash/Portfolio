@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Download, Github, Linkedin, Mail, ExternalLink } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const socialLinks = [

@@ -25,14 +25,14 @@ export function calculateAge(birthDate: string) {
     return age
 }
 
-export function debounce<T extends (...args: any[]) => any>(
-    func: T,
-    wait: number
+export function debounce<T extends (...args: unknown[]) => unknown>(
+  func: T,
+  wait: number
 ): (...args: Parameters<T>) => void {
-    let timeout: NodeJS.Timeout
+  let timeout: NodeJS.Timeout
 
-    return (...args: Parameters<T>) => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => func(...args), wait)
-    }
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
+  }
 }

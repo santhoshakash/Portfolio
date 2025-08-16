@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
@@ -150,8 +149,8 @@ export function Contact() {
                         transition={{ duration: 0.8, delay: 0.6 }}
                         className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto"
                     >
-                        I'm always excited to connect with fellow developers, potential clients, and collaborators.
-                        Let's build something amazing together!
+                        I&apos;m always excited to connect with fellow developers, potential clients, and collaborators.
+                        Let&apos;s build something amazing together!
                     </motion.p>
                 </motion.div>
 
@@ -164,10 +163,10 @@ export function Contact() {
                         className="space-y-8"
                     >
                         <div>
-                            <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+                            <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
                             <p className="text-muted-foreground leading-relaxed mb-8">
                                 Whether you have a project in mind, want to discuss potential opportunities,
-                                or just want to say hello, I'd love to hear from you. I'm always open to
+                                or just want to say hello, I&apos;d love to hear from you. I&apos;m always open to
                                 new collaborations and interesting conversations.
                             </p>
                         </div>
@@ -246,7 +245,7 @@ export function Contact() {
                                         </span>
                                     </div>
                                     <p className="text-sm text-green-600 dark:text-green-300">
-                                        I'm currently accepting new projects and collaborations
+                                        I&apos;m currently accepting new projects and collaborations
                                     </p>
                                 </CardContent>
                             </Card>
@@ -333,7 +332,7 @@ export function Contact() {
                                         >
                                             <CheckCircle className="w-5 h-5 text-green-600" />
                                             <span className="text-green-800 dark:text-green-200">
-                                                Message sent successfully! I'll get back to you soon.
+                                                Message sent successfully! I&apos;ll get back to you soon.
                                             </span>
                                         </motion.div>
                                     )}
@@ -400,7 +399,7 @@ export function Contact() {
                                     },
                                     {
                                         title: "Ongoing Support",
-                                        description: "I'm here for you even after project completion",
+                                        description: "I&apos;m here for you even after project completion",
                                         icon: "🤝"
                                     }
                                 ].map((item, index) => (
